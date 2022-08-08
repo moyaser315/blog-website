@@ -1,0 +1,14 @@
+<%-include("partials/header.ejs")-%>
+<h1>hello</h1>
+<p><%=homeStartingContent%></p>
+<% items.forEach(function(title) {%>
+<h1><%=title.articleTitle%></h1>
+<% if(title.article.length<=100){%>
+  <p><%=title.article%></p>
+<%} else{ %>
+  <p ><%=title.article.substr(0,100)+"...";%> <span><a href="/posts/<%=title.articleTitle%>">Read more</a></span></p>
+
+<%} %>
+<%});%>
+
+<%-include("partials/footer.ejs")-%>
